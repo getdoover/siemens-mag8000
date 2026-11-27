@@ -1,0 +1,8 @@
+[project]
+name = "mag8000-sim"
+version = "0.1.0"
+description = "Modbus simulator for the Siemens MAG 8000 flow meter"
+requires-python = ">=3.11"
+dependencies = [
+    "pymodbus==3.9.2",
+]

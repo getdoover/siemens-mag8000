@@ -1,0 +1,17 @@
+{
+    "siemens_mag8000": {
+        "name": "siemens_mag8000",
+        "display_name": "Siemens MAG 8000",
+        "type": "DEV",
+        "visibility": "PUB",
+        "allow_many": true,
+        "description": "Read flow and totals from a Siemens SITRANS F M MAG 8000 water meter over Modbus.",
+        "long_description": "README.md",
+        "depends_on": [
+            "modbus_interface"
+        ],
+        "organisation_id": 93957122026437134,
+        "image_name": "registry.doover.com/apps/siemens_mag8000:main",
+        "build_args": "--platform linux/amd64,linux/arm64"
+    }
+}

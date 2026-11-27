@@ -1,0 +1,14 @@
+{
+    "modbus_id": 1,
+    "max_flow": 15,
+    "allow_shutdown": true,
+    "idle_read_seconds": 60,
+    "flow_read_seconds": 15,
+    "position": 50,
+    "modbus_config": {
+        "name": "sim",
+        "bus_type": "tcp",
+        "tcp_uri": "127.0.0.1:5020",
+        "tcp_timeout": 1
+    }
+}

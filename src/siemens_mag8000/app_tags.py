@@ -1,0 +1,39 @@
+from pydoover.tags import Tag, Tags
+
+
+class SiemensMag8000Tags(Tags):
+    # Display values (updated from each modbus reading)
+    last_flow = Tag("number", default=None)
+    last_event_counter = Tag("number", default=None)
+    # Gauge segments for the event total, one per target the user has set.
+    # Empty until the app says otherwise, which is what makes the reading fall
+    # back to a plain number on a device with no targets.
+    event_ranges = Tag("array", default=[])
+    last_total = Tag("number", default=None)
+    last_total_2 = Tag("number", default=None)
+    comms_active = Tag("boolean", default=False)
+    time_last_update = Tag("number", default=None)
+
+    # Meter health
+    meter_responding = Tag("boolean", default=False)
+    meter_status = Tag("string", default=None)
+    power_source = Tag("string", default=None)
+    battery_percent = Tag("number", default=None)
+    transmitter_temp = Tag("number", default=None)
+
+    # Persisted state
+    last_time_non_zero_flow = Tag("number", default=0)
+    last_event_counter_zero = Tag("number", default=0)
+
+    # User-set thresholds (set via UI handlers)
+    shutdown_threshold = Tag("number", default=None)
+    # When the event will reach the shutdown target at the current flow, in
+    # ms since epoch. None while there's no target or the pump isn't running.
+    shutdown_eta = Tag("number", default=None)
+
+    # Cross-app tags for pump control
+    alert_triggered = Tag("boolean", default=False)
+    alert_message_short = Tag("string", default=None)
+    alert_message_long = Tag("string", default=None)
+
+    app_display_name = Tag("string", default="Siemens MAG 8000")
