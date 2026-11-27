@@ -24,11 +24,6 @@ class SiemensMag8000UI(ui.UI, display_name=SiemensMag8000Tags.app_display_name):
                         units="ML",
                         value=SiemensMag8000Tags.last_total,
                     ),
-                    ui.NumericVariable(
-                        "Totalizer 2",
-                        units="ML",
-                        value=SiemensMag8000Tags.last_total_2,
-                    ),
                     ui.Timestamp(
                         "Last Read",
                         value=SiemensMag8000Tags.time_last_update,
@@ -107,6 +102,11 @@ class SiemensMag8000UI(ui.UI, display_name=SiemensMag8000Tags.app_display_name):
                 value=SiemensMag8000Tags.transmitter_temp,
                 precision=1,
             ),
+            ui.NumericVariable(
+                "Totalizer 2",
+                units="ML",
+                value=SiemensMag8000Tags.last_total_2,
+            ),
             ui.BooleanVariable(
                 "Meter Responding",
                 value=SiemensMag8000Tags.meter_responding,
@@ -125,7 +125,7 @@ class SiemensMag8000UI(ui.UI, display_name=SiemensMag8000Tags.app_display_name):
         for elem in (
             self.tabs.meter.flow,
             self.tabs.meter.meter_total,
-            self.tabs.meter.totalizer_2,
+            self.maintenance.totalizer_2,
             self.tabs.event.this_event,
         ):
             elem.precision = 1 if max_flow >= 100 else 2
